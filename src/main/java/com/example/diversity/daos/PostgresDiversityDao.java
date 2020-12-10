@@ -41,7 +41,7 @@ public class PostgresDiversityDao implements DiversityDao{
         return template.query("SELECT p.\"id\", p.\"name\", p.\"gender\", p.\"race\", p.\"birthdate\", p.\"religion\", p.\"orientation\",\n" +
                 "\tg.\"yearStart\", g.\"yearEnd\", g.\"state\"\n" +
                 "\tFROM public.persons as p\n" +
-                "\tright join public.senators as g on p.\"id\" = g.\"personId\";", new SenatorMapper() );
+                "\tright join public.senate as g on p.\"id\" = g.\"personId\";", new SenatorMapper() );
     }
 
     @Override
@@ -57,12 +57,12 @@ public class PostgresDiversityDao implements DiversityDao{
         return template.query("SELECT p.\"id\", p.\"name\", p.\"gender\", p.\"race\", p.\"birthdate\", p.\"religion\", p.\"orientation\",\n" +
                 "\tg.\"yearStart\", g.\"yearEnd\", g.\"state\"\n" +
                 "\tFROM public.persons as p\n" +
-                "\tright join public.houseRep as g on p.\"id\" = g.\"personId\";", new HORMapper() );
+                "\tright join public.\"houseRep\" as g on p.\"id\" = g.\"personId\";", new HORMapper() );
     }
 
     @Override
     public void addHOR(HOR hor) {
-        template.update("INSERT INTO public.houseRep(\n" +
+        template.update("INSERT INTO public.\"houseRep\"(\n" +
                 "\t\"personId\", \"yearStart\", \"yearEnd\", state)\n" +
                 "\tVALUES ('"+hor.getPerson().getId()+"', '"+hor.getYearStart()+"', '"+hor.getYearEnd()+"', '"+hor.getState()+"');");
     }
