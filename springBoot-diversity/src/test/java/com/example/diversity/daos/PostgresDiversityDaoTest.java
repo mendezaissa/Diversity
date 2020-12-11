@@ -23,38 +23,38 @@ class PostgresDiversityDaoTest {
     @Autowired
     DiversityDao dao;
 
-    @Test
-    void getAllGovernors() {
-
-        List<Governor> allGovernors = dao.getAllGovernors();
-        Governor elliot = allGovernors.get(0);
-        System.out.println("");
-    }
-
-    @Test
-    void addGovernor() {
-        Governor governor = new Governor();
-
-        Person person = new Person();
-        person.setId(1);
-        person.setName("Eliot");
-        person.setGender('M');
-        person.setReligion("Atheist");
-        person.setRace("Asian");
-        person.setOrientation("Hetero");
-
-        LocalDate birth = LocalDate.of(1995,01,12);
-        person.setBirth( birth );
-
-        dao.addPerson( person );
-
-        governor.setPerson( person );
-        governor.setYearStart( LocalDate.of(2020, 1, 1) );
-        governor.setYearEnd( LocalDate.of(2020,1,1));
-        governor.setState("TX");
-
-        dao.addGovernor( governor );
-    }
+//    @Test
+//    void getAllGovernors() {
+//
+//        List<Governor> allGovernors = dao.getAllGovernors();
+//        Governor elliot = allGovernors.get(0);
+//        System.out.println("");
+//    }
+//
+//    @Test
+//    void addGovernor() {
+//        Governor governor = new Governor();
+//
+//        Person person = new Person();
+//        person.setId(1);
+//        person.setName("Eliot");
+//        person.setGender('M');
+//        person.setReligion("Atheist");
+//        person.setRace("Asian");
+//        person.setOrientation("Hetero");
+//
+//        LocalDate birth = LocalDate.of(1995,01,12);
+//        person.setBirth( birth );
+//
+//        dao.addPerson( person );
+//
+//        governor.setPerson( person );
+//        governor.setYearStart( LocalDate.of(2020, 1, 1) );
+//        governor.setYearEnd( LocalDate.of(2020,1,1));
+//        governor.setState("TX");
+//
+//        dao.addGovernor( governor );
+//    }
 
     @Test
     void getAllSenators() {
