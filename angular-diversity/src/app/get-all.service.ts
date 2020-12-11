@@ -13,12 +13,8 @@ import { Person } from './person';
   providedIn: 'root'
 })
 export class GetAllService {
-
-  private handleError<T>(operation = 'operation', result?: T){
-    return (error: any): Observable<T> => {
-      return of(result as T);
-    }
-  }
+  url:string = "http://3.134.78.4:8080/api";
+  
 
   httpOptions = {
     headers: new HttpHeaders( { 'Content-type': 'application/json' })
@@ -28,7 +24,7 @@ export class GetAllService {
 
   //get all persons
   getPersons(): Observable<Person[]>{
-    return this.http.get<Person[]>("http://localhost:8080/api/persons")
+    return this.http.get<Person[]>(`${this.url}/persons`)
       .pipe(
         catchError(this.handleError<Person[]>('getPersons', []))
       );
@@ -36,7 +32,7 @@ export class GetAllService {
 
     //get all governors
     getGovernors(): Observable<Governor[]>{
-      return this.http.get<Governor[]>("http://localhost:8080/api/governors")
+      return this.http.get<Governor[]>(`${this.url}/governors`)
         .pipe(
           catchError(this.handleError<Governor[]>('getGovernors', []))
         );
@@ -44,7 +40,7 @@ export class GetAllService {
 
     //get all HORs
     getHORs(): Observable<HOR[]>{
-    return this.http.get<HOR[]>("http://localhost:8080/api/HORs")
+    return this.http.get<HOR[]>(`${this.url}/HORs`)
       .pipe(
         catchError(this.handleError<HOR[]>('getHORs', []))
       );
@@ -52,7 +48,7 @@ export class GetAllService {
 
     //get all mayors
     getMayors(): Observable<Mayor[]>{
-    return this.http.get<Mayor[]>("http://localhost:8080/api/mayors")
+    return this.http.get<Mayor[]>(`${this.url}/mayors`)
       .pipe(
         catchError(this.handleError<Mayor[]>('getMayors', []))
       );
@@ -60,7 +56,7 @@ export class GetAllService {
 
     //get all senators
     getSenators(): Observable<Senator[]>{
-      return this.http.get<Senator[]>("http://localhost:8080/api/senators")
+      return this.http.get<Senator[]>(`${this.url}/senators`)
         .pipe(
           catchError(this.handleError<Senator[]>('getSenators', []))
         );
@@ -68,5 +64,9 @@ export class GetAllService {
 
 
 
-
+    private handleError<T>(operation = 'operation', result?: T){
+      return (error: any): Observable<T> => {
+        return of(result as T);
+      }
+    }
 }
