@@ -1,7 +1,9 @@
 package com.example.diversity.services;
 
 import com.example.diversity.models.Governor;
+import com.example.diversity.models.HOR;
 import com.example.diversity.models.Person;
+import com.example.diversity.models.Senator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.BufferedReader;
@@ -31,7 +33,9 @@ public class CSVImportService {
         String line = "";
         List<Integer> ids = new ArrayList<>();
         while((line= reader.readLine())!=null){
-
+            String[] splits = line.split(",");
+            Person p = parsePersonFromSplits(splits);
+            ids.add(p.getId());
         }
         return ids;
     }
@@ -44,10 +48,14 @@ public class CSVImportService {
             //    LocalDate yearStart;
             //    LocalDate yearEnd;
             //    String state;
+            String[] splits = line.split(",");
+            Person p=parsePersonFromSplits(splits);
+
+
 
         }
     }
-    public Person parsePersonFromString ( String[] splits){
+    public Person parsePersonFromSplits( String[] splits){
         Person p = new Person();
         p.setName(splits[0]);
         p.setGender(splits[1].charAt(0));
@@ -57,8 +65,24 @@ public class CSVImportService {
         p.setOrientation(splits[5]);
         return p;
     }
-    public Governor ParseGovernor (Person person,String[] splits){
+    public Governor ParseGovernorFromSplits (Person person,String[] splits){
         Governor g = new Governor();
+        g.setPerson(person);
+        g.setState(splits[6]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        return g;
+    }
+    public Senator ParseSenatorFromSplits (Person person, String[] splits){
+        Senator g = new Senator();
+        g.setPerson(person);
+        g.setState(splits[6]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        return g;
+    }
+    public HOR ParseHORFromSplits (Person person, String[] splits){
+        HOR g = new HOR();
         g.setPerson(person);
         g.setState(splits[6]);
         g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));

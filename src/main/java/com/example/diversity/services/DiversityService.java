@@ -59,6 +59,7 @@ public class DiversityService {
     public Integer addPerson(Person p){
         return dao.addPerson(p);
     }
+    public Person searchPerson(String name){return dao.searchPerson(name);}
 
 
 }
