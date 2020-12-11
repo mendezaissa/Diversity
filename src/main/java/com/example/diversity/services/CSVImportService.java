@@ -1,9 +1,6 @@
 package com.example.diversity.services;
 
-import com.example.diversity.models.Governor;
-import com.example.diversity.models.HOR;
-import com.example.diversity.models.Person;
-import com.example.diversity.models.Senator;
+import com.example.diversity.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.BufferedReader;
@@ -50,11 +47,92 @@ public class CSVImportService {
             //    String state;
             String[] splits = line.split(",");
             Person p=parsePersonFromSplits(splits);
-
+            Person fromSearch = service.searchPerson(p.getName());
+            if(fromSearch==null){
+                service.addPerson(p);
+                Governor parsedGov=parseGovernorFromSplits(p,splits);
+                service.addGovernor(parsedGov);
+            } else{
+                Governor parsedGov = parseGovernorFromSplits(fromSearch,splits);
+                service.addGovernor(parsedGov);
+            }
 
 
         }
     }
+    public void importHORs(String filepath) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(filepath));
+        String line ="";
+        while((line= reader.readLine())!= null){
+            //
+            //    Person person;
+            //    LocalDate yearStart;
+            //    LocalDate yearEnd;
+            //    String state;
+            String[] splits = line.split(",");
+            Person p=parsePersonFromSplits(splits);
+            Person fromSearch = service.searchPerson(p.getName());
+            if(fromSearch==null){
+                service.addPerson(p);
+                HOR parsedHor=parseHORFromSplits(p,splits);
+                service.addHOR(parsedHor);
+            } else{
+                HOR parsedHor = parseHORFromSplits(fromSearch,splits);
+                service.addHOR(parsedHor);
+            }
+
+
+        }
+    }
+    public void importSenators(String filepath) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(filepath));
+        String line ="";
+        while((line= reader.readLine())!= null){
+            //
+            //    Person person;
+            //    LocalDate yearStart;
+            //    LocalDate yearEnd;
+            //    String state;
+            String[] splits = line.split(",");
+            Person p=parsePersonFromSplits(splits);
+            Person fromSearch = service.searchPerson(p.getName());
+            if(fromSearch==null){
+                service.addPerson(p);
+                Senator parsedSenator=parseSenatorFromSplits(p,splits);
+                service.addSenator(parsedSenator);
+            } else{
+                Senator parsedSenator = parseSenatorFromSplits(fromSearch,splits);
+                service.addSenator(parsedSenator);
+            }
+
+
+        }
+    }
+    public void importMayors(String filepath) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(filepath));
+        String line ="";
+        while((line= reader.readLine())!= null){
+            //
+            //    Person person;
+            //    LocalDate yearStart;
+            //    LocalDate yearEnd;
+            //    String state;
+            String[] splits = line.split(",");
+            Person p=parsePersonFromSplits(splits);
+            Person fromSearch = service.searchPerson(p.getName());
+            if(fromSearch==null){
+                service.addPerson(p);
+                Mayor parsedMayor=parseMayorFromSplits(p,splits);
+                service.addMayor(parsedMayor);
+            } else{
+                Mayor parsedMayor = parseMayorFromSplits(fromSearch,splits);
+                service.addMayor(parsedMayor);
+            }
+
+
+        }
+    }
+    
     public Person parsePersonFromSplits( String[] splits){
         Person p = new Person();
         p.setName(splits[0]);
@@ -65,7 +143,7 @@ public class CSVImportService {
         p.setOrientation(splits[5]);
         return p;
     }
-    public Governor ParseGovernorFromSplits (Person person,String[] splits){
+    public Governor parseGovernorFromSplits (Person person,String[] splits){
         Governor g = new Governor();
         g.setPerson(person);
         g.setState(splits[6]);
@@ -73,7 +151,7 @@ public class CSVImportService {
         g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
         return g;
     }
-    public Senator ParseSenatorFromSplits (Person person, String[] splits){
+    public Senator parseSenatorFromSplits (Person person, String[] splits){
         Senator g = new Senator();
         g.setPerson(person);
         g.setState(splits[6]);
@@ -81,12 +159,21 @@ public class CSVImportService {
         g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
         return g;
     }
-    public HOR ParseHORFromSplits (Person person, String[] splits){
+    public HOR parseHORFromSplits (Person person, String[] splits){
         HOR g = new HOR();
         g.setPerson(person);
         g.setState(splits[6]);
         g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
         g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        return g;
+    }
+    public Mayor parseMayorFromSplits (Person person, String[] splits){
+        Mayor g = new Mayor();
+        g.setPerson(person);
+        g.setCity(splits[6]);
+        g.setState(splits[7]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[9]),1,1));
         return g;
     }
 
