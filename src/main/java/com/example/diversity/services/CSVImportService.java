@@ -1,5 +1,6 @@
 package com.example.diversity.services;
 
+import com.example.diversity.models.Governor;
 import com.example.diversity.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,15 +31,7 @@ public class CSVImportService {
         String line = "";
         List<Integer> ids = new ArrayList<>();
         while((line= reader.readLine())!=null){
-            Person p = new Person();
-            String[] splits =line.split(",");
-            p.setName(splits[0]);
-            p.setGender(splits[1].charAt(0));
-            p.setRace(splits[2]);
-            p.setBirth(LocalDate.of(Integer.parseInt(splits[3]),1,1));
-            p.setReligion(splits[4]);
-            p.setOrientation(splits[5]);
-            ids.add(service.addPerson(p));
+
         }
         return ids;
     }
@@ -53,6 +46,24 @@ public class CSVImportService {
             //    String state;
 
         }
+    }
+    public Person parsePersonFromString ( String[] splits){
+        Person p = new Person();
+        p.setName(splits[0]);
+        p.setGender(splits[1].charAt(0));
+        p.setRace(splits[2]);
+        p.setBirth(LocalDate.of(Integer.parseInt(splits[3]),1,1));
+        p.setReligion(splits[4]);
+        p.setOrientation(splits[5]);
+        return p;
+    }
+    public Governor ParseGovernor (Person person,String[] splits){
+        Governor g = new Governor();
+        g.setPerson(person);
+        g.setState(splits[6]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        return g;
     }
 
 }

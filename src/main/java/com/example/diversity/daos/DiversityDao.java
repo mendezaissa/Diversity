@@ -26,4 +26,6 @@ public interface DiversityDao {
 
     Integer addPerson(Person p);
 
+    Person searchPerson(String name);
+
 }

@@ -99,6 +99,11 @@ public class PostgresDiversityDao implements DiversityDao{
         return i;
     }
 
+    @Override
+    public Person searchPerson(String name) {
+        return template.query("SELECT *" + "\tFROM public.persons WHERE \"name\"='"+name+"';", new PersonMapper()).get(0);
+    }
+
     class GovernorMapper implements RowMapper<Governor>{
         @Override
         public Governor mapRow(ResultSet resultSet, int i) throws SQLException {
