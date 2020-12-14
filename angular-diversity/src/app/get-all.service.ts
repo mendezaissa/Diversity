@@ -13,7 +13,7 @@ import { Person } from './person';
   providedIn: 'root'
 })
 export class GetAllService {
-  url:string = "http://3.134.78.4/api";
+  url:string = "http://18.219.31.96/api";
   
 
   httpOptions = {
