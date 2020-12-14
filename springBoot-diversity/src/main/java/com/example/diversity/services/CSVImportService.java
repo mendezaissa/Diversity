@@ -2,6 +2,7 @@ package com.example.diversity.services;
 
 import com.example.diversity.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class CSVImportService {
 
     DiversityService service;
