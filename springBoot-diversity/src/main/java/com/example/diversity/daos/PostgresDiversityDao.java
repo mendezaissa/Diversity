@@ -80,8 +80,8 @@ public class PostgresDiversityDao implements DiversityDao{
     @Override
     public void addMayor(Mayor m) {
         template.update("INSERT INTO public.mayors(\n" +
-                "\t\"personId\", \"yearStart\", \"yearEnd\", state)\n" +
-                "\tVALUES ('"+m.getPerson().getId()+"', '"+m.getYearStart()+"', '"+m.getYearEnd()+"', '"+m.getState()+"');");
+                "\t\"personId\", \"yearStart\", \"yearEnd\",\"city\",\"state\")\n" +
+                "\tVALUES ('"+m.getPerson().getId()+"', '"+m.getYearStart()+"', '"+m.getYearEnd()+"','"+m.getCity()+"', '"+m.getState()+"');");
     }
 
     @Override

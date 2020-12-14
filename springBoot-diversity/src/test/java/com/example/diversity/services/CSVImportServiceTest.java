@@ -22,4 +22,8 @@ class CSVImportServiceTest {
 //    void importSenators() throws IOException {
 //        impo.importSenators("/Users/ezubkoff/desktop/github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/FINAL_senators.csv");
 //    }
+//    @Test
+//    void importMayors() throws IOException {
+//        impo.importMayors("/Users/ezubkoff/desktop/github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/MayorsList.csv");
+//    }
 }
