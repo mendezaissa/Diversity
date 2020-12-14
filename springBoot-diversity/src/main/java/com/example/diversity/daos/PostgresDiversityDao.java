@@ -193,6 +193,7 @@ public class PostgresDiversityDao implements DiversityDao{
             toReturn.setPerson( p );
             toReturn.setYearStart( resultSet.getDate("yearStart").toLocalDate() );
             toReturn.setYearEnd( resultSet.getDate("yearEnd").toLocalDate() );
+            toReturn.setCity(resultSet.getString("city"));
             toReturn.setState( resultSet.getString("state") );
 
             return toReturn;
