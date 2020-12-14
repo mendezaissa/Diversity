@@ -41,7 +41,7 @@ public class PostgresDiversityDao implements DiversityDao{
         return template.query("SELECT p.\"id\", p.\"name\", p.\"gender\", p.\"race\", p.\"birthdate\", p.\"religion\", p.\"orientation\",\n" +
                 "\tg.\"yearStart\", g.\"yearEnd\", g.\"state\"\n" +
                 "\tFROM public.persons as p\n" +
-                "\tright join public.senate as g on p.\"id\" = g.\"personId\";", new SenatorMapper() );
+                "\tright join public.senators as g on p.\"id\" = g.\"personId\";", new SenatorMapper() );
     }
 
     @Override
