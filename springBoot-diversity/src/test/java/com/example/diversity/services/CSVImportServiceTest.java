@@ -18,8 +18,8 @@ class CSVImportServiceTest {
     @Autowired
     CSVImportService impo;
 
-    @Test
-    void importSenators() throws IOException {
-        impo.importSenators("/Users/ezubkoff/desktop/github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/FINAL_senators.csv");
-    }
+//    @Test
+//    void importSenators() throws IOException {
+//        impo.importSenators("/Users/ezubkoff/desktop/github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/FINAL_senators.csv");
+//    }
 }

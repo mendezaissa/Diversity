@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.example.diversity.services.CSVImportServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.632 s <<< FAILURE! - in com.example.diversity.services.CSVImportServiceTest
+importSenators  Time elapsed: 1.142 s  <<< ERROR!
+org.springframework.dao.DuplicateKeyException: 
+StatementCallback; SQL [INSERT INTO public.senators(
+	"personId", "yearStart", "yearEnd", state)
+	VALUES ('3', '1987-01-01', '2020-01-01', 'Alabama');]; ERROR: duplicate key value violates unique constraint "senators_pkey"
+  Detail: Key ("personId", "yearStart")=(3, 1987-01-01) already exists.; nested exception is org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "senators_pkey"
+  Detail: Key ("personId", "yearStart")=(3, 1987-01-01) already exists.
+	at com.example.diversity.services.CSVImportServiceTest.importSenators(CSVImportServiceTest.java:23)
+Caused by: org.postgresql.util.PSQLException: 
+ERROR: duplicate key value violates unique constraint "senators_pkey"
+  Detail: Key ("personId", "yearStart")=(3, 1987-01-01) already exists.
+	at com.example.diversity.services.CSVImportServiceTest.importSenators(CSVImportServiceTest.java:23)
+
