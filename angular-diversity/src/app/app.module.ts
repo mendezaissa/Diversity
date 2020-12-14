@@ -6,11 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RawDataComponent } from './raw-data/raw-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SenatorsComponent } from './senators/senators.component';
+import { PersonsComponent } from './persons/persons.component';
+import { MayorsComponent } from './mayors/mayors.component';
+import { HorsComponent } from './hors/hors.component';
+import { GovernorsComponent } from './governors/governors.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RawDataComponent
+    RawDataComponent,
+    SenatorsComponent,
+    PersonsComponent,
+    MayorsComponent,
+    HorsComponent,
+    GovernorsComponent
   ],
   imports: [
     BrowserModule,
