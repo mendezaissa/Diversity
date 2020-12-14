@@ -50,7 +50,8 @@ public class CSVImportService {
             Person p=parsePersonFromSplits(splits);
             Person fromSearch = service.searchPerson(p.getName());
             if(fromSearch==null){
-                service.addPerson(p);
+                Integer id=service.addPerson(p);
+                p.setId(id);
                 Governor parsedGov=parseGovernorFromSplits(p,splits);
                 service.addGovernor(parsedGov);
             } else{
@@ -74,7 +75,8 @@ public class CSVImportService {
             Person p=parsePersonFromSplits(splits);
             Person fromSearch = service.searchPerson(p.getName());
             if(fromSearch==null){
-                service.addPerson(p);
+                Integer id=service.addPerson(p);
+                p.setId(id);
                 HOR parsedHor=parseHORFromSplits(p,splits);
                 service.addHOR(parsedHor);
             } else{
@@ -98,7 +100,8 @@ public class CSVImportService {
             Person p=parsePersonFromSplits(splits);
             Person fromSearch = service.searchPerson(p.getName());
             if(fromSearch==null){
-                service.addPerson(p);
+                Integer id =service.addPerson(p);
+                p.setId(id);
                 Senator parsedSenator=parseSenatorFromSplits(p,splits);
                 service.addSenator(parsedSenator);
             } else{
@@ -122,7 +125,8 @@ public class CSVImportService {
             Person p=parsePersonFromSplits(splits);
             Person fromSearch = service.searchPerson(p.getName());
             if(fromSearch==null){
-                service.addPerson(p);
+                Integer id=service.addPerson(p);
+                p.setId(id);
                 Mayor parsedMayor=parseMayorFromSplits(p,splits);
                 service.addMayor(parsedMayor);
             } else{
@@ -147,34 +151,34 @@ public class CSVImportService {
     public Governor parseGovernorFromSplits (Person person,String[] splits){
         Governor g = new Governor();
         g.setPerson(person);
-        g.setState(splits[6]);
-        g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
-        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        g.setState(splits[8]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[6]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[7]),1,1));
         return g;
     }
     public Senator parseSenatorFromSplits (Person person, String[] splits){
         Senator g = new Senator();
         g.setPerson(person);
-        g.setState(splits[6]);
-        g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
-        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        g.setState(splits[8]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[6]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[7]),1,1));
         return g;
     }
     public HOR parseHORFromSplits (Person person, String[] splits){
         HOR g = new HOR();
         g.setPerson(person);
-        g.setState(splits[6]);
-        g.setYearStart(LocalDate.of(Integer.parseInt(splits[7]),1,1));
-        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[8]),1,1));
+        g.setState(splits[8]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[6]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[7]),1,1));
         return g;
     }
     public Mayor parseMayorFromSplits (Person person, String[] splits){
         Mayor g = new Mayor();
         g.setPerson(person);
-        g.setCity(splits[6]);
-        g.setState(splits[7]);
-        g.setYearStart(LocalDate.of(Integer.parseInt(splits[8]),1,1));
-        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[9]),1,1));
+        g.setCity(splits[8]);
+        g.setState(splits[9]);
+        g.setYearStart(LocalDate.of(Integer.parseInt(splits[6]),1,1));
+        g.setYearEnd(LocalDate.of(Integer.parseInt(splits[7]),1,1));
         return g;
     }
 

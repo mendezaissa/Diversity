@@ -101,7 +101,10 @@ public class PostgresDiversityDao implements DiversityDao{
 
     @Override
     public Person searchPerson(String name) {
-        return template.query("SELECT *" + "\tFROM public.persons WHERE \"name\"='"+name+"';", new PersonMapper()).get(0);
+        List<Person> p = template.query("SELECT *" + "\tFROM public.persons WHERE \"name\"='"+name+"';", new PersonMapper());
+        if(p.size()>0)return p.get(0);
+        else return null;
+
     }
 
     class GovernorMapper implements RowMapper<Governor>{
@@ -200,7 +203,6 @@ public class PostgresDiversityDao implements DiversityDao{
         @Override
         public Person mapRow(ResultSet resultSet, int i) throws SQLException {
             Person p = new Person();
-
             p.setId( resultSet.getInt("id") );
             p.setName( resultSet.getString("name"));
             p.setBirth( resultSet.getDate("birthdate").toLocalDate() ); //double check!!!!
