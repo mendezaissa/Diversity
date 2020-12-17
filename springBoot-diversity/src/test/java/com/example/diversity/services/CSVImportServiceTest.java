@@ -20,10 +20,22 @@ class CSVImportServiceTest {
 
 //    @Test
 //    void importSenators() throws IOException {
-//        impo.importSenators("/Users/ezubkoff/desktop/github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/FINAL_senators.csv");
+//        impo.importSenators("/Users/amendez/Desktop/Github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/FINAL_senators.csv");
 //    }
+
 //    @Test
 //    void importMayors() throws IOException {
-//        impo.importMayors("/Users/ezubkoff/desktop/github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/MayorsList.csv");
+//        impo.importMayors("/Users/amendez/Desktop/Github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/MayorsList.csv");
 //    }
+
+//    @Test
+//    void importHORs() throws IOException{
+//        impo.importHORs("/Users/amendez/Desktop/Github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/final_HOR.csv");
+//    }
+
+//    @Test
+//    void importGovernors() throws IOException{
+//        impo.importGovernors("/Users/amendez/Desktop/Github/Diversity/springBoot-diversity/src/main/java/com/example/diversity/services/Governors.csv");
+//    }
+
 }
