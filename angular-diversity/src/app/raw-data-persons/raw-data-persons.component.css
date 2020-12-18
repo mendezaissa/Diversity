@@ -7,3 +7,7 @@ table {
     width: 70%;
     border-collapse: collapse;
   }
+
+.div{
+    padding-top: 20px;
+}

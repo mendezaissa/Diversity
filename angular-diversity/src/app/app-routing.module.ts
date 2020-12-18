@@ -13,7 +13,7 @@ import { RawDataComponent } from './raw-data/raw-data.component';
 import { SenatorsComponent } from './senators/senators.component';
 
 const routes: Routes = [
-  { path : 'raw-data', component : RawDataComponent },
+  { path : 'homepage', component : RawDataComponent },
   { path : '', component : RawDataComponent },
   { path : 'raw-data-senators', component : RawDataSenatorsComponent },
   { path : 'raw-data-governors', component : RawDataGovernorsComponent },
