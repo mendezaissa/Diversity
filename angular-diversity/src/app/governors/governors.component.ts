@@ -20,12 +20,8 @@ export class GovernorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.renderExternalScript('https://public.tableau.com/javascripts/api/viz_v1.js').onload = () => {
-      console.log('Script loaded');
-      // do something with this library
-  }
-
+    }
   }
 
 }

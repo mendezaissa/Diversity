@@ -2,15 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RawDataComponent } from './raw-data/raw-data.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SenatorsComponent } from './senators/senators.component';
 import { PersonsComponent } from './persons/persons.component';
 import { MayorsComponent } from './mayors/mayors.component';
 import { HorsComponent } from './hors/hors.component';
 import { GovernorsComponent } from './governors/governors.component';
+import { RawDataSenatorsComponent } from './raw-data-senators/raw-data-senators.component';
+import { RawDataGovernorsComponent } from './raw-data-governors/raw-data-governors.component';
+import { RawDataMayorsComponent } from './raw-data-mayors/raw-data-mayors.component';
+import { RawDataHorsComponent } from './raw-data-hors/raw-data-hors.component';
+import { RawDataPersonsComponent } from './raw-data-persons/raw-data-persons.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { GovernorsComponent } from './governors/governors.component';
     PersonsComponent,
     MayorsComponent,
     HorsComponent,
-    GovernorsComponent
+    GovernorsComponent,
+    RawDataSenatorsComponent,
+    RawDataGovernorsComponent,
+    RawDataMayorsComponent,
+    RawDataHorsComponent,
+    RawDataPersonsComponent
   ],
   imports: [
     BrowserModule,

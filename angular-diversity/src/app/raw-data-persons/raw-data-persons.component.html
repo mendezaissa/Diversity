@@ -1,0 +1,24 @@
+<!--Persons table-->
+<div class="container">
+    <h1>Persons</h1>
+    <table>
+        <tr>
+            <th>Person ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Race</th>
+            <th>Birthdate</th>
+            <th>Religion</th>
+            <th>Sexual Orientation</th>
+        </tr>
+        <tr *ngFor="let person of persons">
+            <td>{{person.id}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.gender}}</td>
+            <td>{{person.race}}</td>
+            <td>{{person.birth}}</td>
+            <td>{{person.religion}}</td>
+            <td>{{person.orientation}}</td>
+        </tr>
+    </table>
+</div>

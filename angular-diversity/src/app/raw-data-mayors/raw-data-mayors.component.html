@@ -1,0 +1,20 @@
+<!--Mayors table-->
+<div class="container">
+    <h1>Mayors</h1>
+    <table>
+        <tr>
+            <th>Person ID</th>
+            <th>Start Year</th>
+            <th>End Year</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+        <tr *ngFor="let mayor of mayors">
+            <td>{{mayor.person.id}}</td>
+            <td>{{mayor.yearStart}}</td>
+            <td>{{mayor.yearEnd}}</td>
+            <td>{{mayor.city}}</td>
+            <td>{{mayor.state}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,18 @@
+<!--HORs table-->
+<div class="container">
+    <h1>House of Representatives</h1>
+    <table>
+        <tr>
+            <th>Person ID</th>
+            <th>Start Year</th>
+            <th>End Year</th>
+            <th>State</th>
+        </tr>
+        <tr *ngFor="let hor of hors">
+            <td>{{hor.person.id}}</td>
+            <td>{{hor.yearStart}}</td>
+            <td>{{hor.yearEnd}}</td>
+            <td>{{hor.state}}</td>
+        </tr>
+    </table>
+</div>

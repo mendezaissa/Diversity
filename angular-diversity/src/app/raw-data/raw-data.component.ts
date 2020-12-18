@@ -53,6 +53,4 @@ export class RawDataComponent implements OnInit {
   getAllSenators() : void {
     this.getAllService.getSenators().subscribe(senators => this.senators = senators);
   }
-
-
 }
