@@ -17,8 +17,8 @@
             <tr *ngFor="let senator of senators">
                 <td>{{senator.person.id}}</td>
                 <td>{{senator.person.name}}</td>
-                <td>{{senator.yearStart}}</td>
-                <td>{{senator.yearEnd}}</td>
+                <td>{{senator.yearStart | date:"yyyy"}}</td>
+                <td>{{senator.yearEnd | date:"yyyy"}}</td>
                 <td>{{senator.state}}</td>
             </tr>
         </tbody>

@@ -18,8 +18,8 @@
             <tr *ngFor="let mayor of mayors">
                 <td>{{mayor.person.id}}</td>
                 <td>{{mayor.person.name}}</td>
-                <td>{{mayor.yearStart}}</td>
-                <td>{{mayor.yearEnd}}</td>
+                <td>{{mayor.yearStart | date:"yyyy"}}</td>
+                <td>{{mayor.yearEnd | date:"yyyy"}}</td>
                 <td>{{mayor.city}}</td>
                 <td>{{mayor.state}}</td>
             </tr>

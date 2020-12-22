@@ -2,7 +2,6 @@
 <div class="div">
 <div class="container">
     <h1>Persons</h1>
-<<<<<<< HEAD
 
         <table class="table table-striped">
             <thead>
@@ -20,30 +19,10 @@
                     <td>{{person.name}}</td>
                     <td>{{person.gender}}</td>
                     <td>{{person.race}}</td>
-                    <td>{{person.birth}}</td>
+                    <td>{{person.birth | date:"yyyy"}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-=======
-    <table>
-        <tr>
-            <th>Person ID</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Race</th>
-            <th>Birthdate</th>
 
-        </tr>
-        <tr *ngFor="let person of persons">
-            <td>{{person.id}}</td>
-            <td>{{person.name}}</td>
-            <td>{{person.gender}}</td>
-            <td>{{person.race}}</td>
-            <td>{{person.birth}}</td>
-
-        </tr>
-    </table>
-</div>
->>>>>>> a2742128283f7afafbc613fe6f60e8c62febc3cf
 </div>

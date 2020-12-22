@@ -9,9 +9,11 @@ import { Person } from '../person';
 })
 export class RawDataPersonsComponent implements OnInit {
 
+  person: Person;
   persons : Person[];
 
-  constructor(private getAllService : GetAllService) { }
+  constructor(private getAllService : GetAllService) { 
+  }
 
   ngOnInit(): void {
     this.getAllPersons();

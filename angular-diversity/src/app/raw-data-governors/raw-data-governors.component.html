@@ -17,8 +17,8 @@
                 <tr *ngFor="let governor of governors">
                     <td>{{governor.person.id}}</td>
                     <td>{{governor.person.name}}</td>
-                    <td>{{governor.yearStart}}</td>
-                    <td>{{governor.yearEnd}}</td>
+                    <td>{{governor.yearStart | date:"yyyy"}}</td>
+                    <td>{{governor.yearEnd | date:"yyyy"}}</td>
                     <td>{{governor.state}}</td>
                 </tr>
             </tbody>
