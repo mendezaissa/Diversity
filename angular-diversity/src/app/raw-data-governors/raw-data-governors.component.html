@@ -1,20 +1,27 @@
 <!--Governors Table-->
 <div class="div">
-<div class="container">
-    <h1>Governors</h1>
-    <table>
-        <tr>
-            <th>Person ID</th>
-            <th>Start Year</th>
-            <th>End Year</th>
-            <th>State</th>
-        </tr>
-        <tr *ngFor="let governor of governors">
-            <td>{{governor.person.id}}</td>
-            <td>{{governor.yearStart}}</td>
-            <td>{{governor.yearEnd}}</td>
-            <td>{{governor.state}}</td>
-        </tr>
-    </table>
-</div>
+    <div class="container">
+        <h1>Governors</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Person ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Start Year</th>
+                    <th scope="col">End Year</th>
+                    <th scope="col">State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let governor of governors">
+                    <td>{{governor.person.id}}</td>
+                    <td>{{governor.person.name}}</td>
+                    <td>{{governor.yearStart}}</td>
+                    <td>{{governor.yearEnd}}</td>
+                    <td>{{governor.state}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

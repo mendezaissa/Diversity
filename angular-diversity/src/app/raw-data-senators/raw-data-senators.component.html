@@ -2,19 +2,27 @@
 <div class="div">
 <div class="container">
     <h1>Senators</h1>
-    <table>
-        <tr>
-            <th>Person ID</th>
-            <th>Start Year</th>
-            <th>End Year</th>
-            <th>State</th>
-        </tr>
-        <tr *ngFor="let senator of senators">
-            <td>{{senator.person.id}}</td>
-            <td>{{senator.yearStart}}</td>
-            <td>{{senator.yearEnd}}</td>
-            <td>{{senator.state}}</td>
-        </tr>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Start Year</th>
+                <th scope="col">End Year</th>
+                <th scope="col">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let senator of senators">
+                <td>{{senator.person.id}}</td>
+                <td>{{senator.person.name}}</td>
+                <td>{{senator.yearStart}}</td>
+                <td>{{senator.yearEnd}}</td>
+                <td>{{senator.state}}</td>
+            </tr>
+        </tbody>
     </table>
+
 </div>
 </div>

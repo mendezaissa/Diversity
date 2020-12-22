@@ -1,12 +1,11 @@
 table, td, th {
     border: 1px solid black;
-    text-align: center;
 }
 
-table {
-    width: 50%;
-    border-collapse: collapse;
-  }
+thead{
+    background-color: rgb(36, 35, 35);
+    color: white;
+}
 
 .div{
     padding-top: 20px;

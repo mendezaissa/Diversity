@@ -2,21 +2,28 @@
 <div class="div">
 <div class="container">
     <h1>Mayors</h1>
-    <table>
-        <tr>
-            <th>Person ID</th>
-            <th>Start Year</th>
-            <th>End Year</th>
-            <th>City</th>
-            <th>State</th>
-        </tr>
-        <tr *ngFor="let mayor of mayors">
-            <td>{{mayor.person.id}}</td>
-            <td>{{mayor.yearStart}}</td>
-            <td>{{mayor.yearEnd}}</td>
-            <td>{{mayor.city}}</td>
-            <td>{{mayor.state}}</td>
-        </tr>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Person ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Start Year</th>
+                <th scope="col">End Year</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mayor of mayors">
+                <td>{{mayor.person.id}}</td>
+                <td>{{mayor.person.name}}</td>
+                <td>{{mayor.yearStart}}</td>
+                <td>{{mayor.yearEnd}}</td>
+                <td>{{mayor.city}}</td>
+                <td>{{mayor.state}}</td>
+            </tr>
+        </tbody>
     </table>
 </div>
 </div>
