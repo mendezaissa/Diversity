@@ -6,7 +6,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Person ID</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Start Year</th>
                     <th scope="col">End Year</th>
@@ -17,8 +17,8 @@
                 <tr *ngFor="let hor of hors">
                     <td>{{hor.person.id}}</td>
                     <td>{{hor.person.name}}</td>
-                    <td>{{hor.yearStart}}</td>
-                    <td>{{hor.yearEnd}}</td>
+                    <td>{{hor.yearStart | date:"yyyy"}}</td>
+                    <td>{{hor.yearEnd | date:"yyyy"}}</td>
                     <td>{{hor.state}}</td>
                 </tr>
             </tbody>
