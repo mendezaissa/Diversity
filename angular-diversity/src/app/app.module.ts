@@ -16,6 +16,7 @@ import { RawDataGovernorsComponent } from './raw-data-governors/raw-data-governo
 import { RawDataMayorsComponent } from './raw-data-mayors/raw-data-mayors.component';
 import { RawDataHorsComponent } from './raw-data-hors/raw-data-hors.component';
 import { RawDataPersonsComponent } from './raw-data-persons/raw-data-persons.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RawDataPersonsComponent } from './raw-data-persons/raw-data-persons.com
     RawDataGovernorsComponent,
     RawDataMayorsComponent,
     RawDataHorsComponent,
-    RawDataPersonsComponent
+    RawDataPersonsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

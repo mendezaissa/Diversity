@@ -11,6 +11,7 @@ import { RawDataSenatorsComponent } from './raw-data-senators/raw-data-senators.
 
 import { RawDataComponent } from './raw-data/raw-data.component';
 import { SenatorsComponent } from './senators/senators.component';
+import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   { path : 'homepage', component : RawDataComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path : 'governors', component : GovernorsComponent},
   { path : 'hors', component : HorsComponent},
   { path : 'mayors', component : MayorsComponent},
-  { path : 'senators', component : SenatorsComponent}
+  { path : 'senators', component : SenatorsComponent},
+  { path: 'team', component: TeamComponent}
 ];
 
 @NgModule({
