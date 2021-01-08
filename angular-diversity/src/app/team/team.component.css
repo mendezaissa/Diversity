@@ -1,3 +1,42 @@
 .team-img{
     position: relative;
 }
+
+#imgtagJacob{
+    object-fit: cover;
+    height: 40vh;
+}
+
+#imgtagEliot{
+    object-fit: cover;
+    height: 40vh;
+    object-position: 43% 20%;
+}
+
+#imgtagAissa{
+    object-fit: cover;
+    height: 40vh;
+    object-position: 50% 18%;
+    width: 358px;
+}
+
+#imgtagToan{
+    height: 40vh;
+    object-fit: cover;
+    object-position: 50% 18%;
+    width: 360px;
+}
+
+#imgtagCody{
+    object-fit: cover;
+    height: 40vh;
+    width: 360px;
+    object-position: 50% 16%;
+}
+
+#imgtagMatthew{
+    object-fit: cover;
+    height: 40vh;
+    width: 355px;
+    object-position: 50% 15%;
+}
